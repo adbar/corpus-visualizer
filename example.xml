@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE collection [
+  <!ELEMENT collection (text+,stats?)>
+  <!ELEMENT text (rohtext)>
+  <!ATTLIST text person CDATA #REQUIRED>
+  <!ATTLIST text titel CDATA #REQUIRED>
+  <!ATTLIST text datum CDATA #REQUIRED>
+  <!ATTLIST text info CDATA #REQUIRED>
+  <!ATTLIST text url CDATA #REQUIRED>
+  <!ATTLIST text anrede CDATA #REQUIRED>
+  <!ELEMENT rohtext (#PCDATA)>
+]>
+
+
+<collection>
+
+
+<text person="XXX" titel="XXX" datum="08.05.2006" url="http://..." info="..."
+anrede="">
+
+<rohtext>
+...
+...
+...
+</rohtext>
+</text>
+
+<text person="XXX" titel="XXX" datum="08.05.2006" url="http://..." info="..."
+anrede="">
+
+<rohtext>
+...
+...
+...
+</rohtext>
+</text>
+
+<text person="XXX" titel="XXX" datum="08.05.2006" url="http://..." info="..."
+anrede="">
+
+<rohtext>
+...
+...
+...
+</rohtext>
+</text>
+
+</collection>

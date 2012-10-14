@@ -1,0 +1,441 @@
+/*
+	This script is part of the Corpus-Visualizer project (https://github.com/adbar/corpus-visualizer).
+	Copyright (C) Adrien Barbaresi, 2012.
+	The Corpus-Explorer is freely available under the GNU GPL v3 license (http://www.gnu.org/licenses/gpl.html).
+*/
+
+
+
+body {
+  font-family: Arial, sans-serif; 
+  color: #333;
+  /*padding-left: 3%;
+  padding-right: 3%;*/
+}
+
+
+div#noscript-warning{
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+z-index: 5;
+text-align: center;
+font-weight: bold;
+font-size: 100%;
+color: #F2F2F2;
+background-color: #BF3131;
+padding: 6px 0px 6px 0px;
+}
+
+
+#whale {
+	border: 1px solid #D3D3D3; /* lightgray : #D3D3D3 */
+	/*border-top: none;*/
+	position: absolute;
+	margin:0 auto; /*used to center the div (known hack for IE) */
+	margin-left: 3%;
+	width: 94%;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	z-index: -1;
+	padding: 3% 1% 0 1%;
+	/*margin-bottom: 20px;*/
+}
+
+
+#tabnav {
+	margin-top: 2.5%;
+	font : 18px sans-serif;
+	color: #000;
+	padding-bottom: 45px;
+	padding-left: 5%;
+	list-style-type: none;
+	z-index: 5;
+}
+
+#tabnav li {
+	float : left;
+	height: 42px;
+	background-color: #EEF0F2;
+	margin: 2px 2px 0 1.25% !important;
+	margin: 2px 2px 0 1.25%;
+	border: 1px solid #D3D3D3;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	/*padding-left: 5px;
+	padding-right: 5px;*/
+	/*overflow: ?? ;*/
+}
+
+#tabnav li.zur {
+	position: absolute;
+	right: 5%;
+}
+
+
+#tabnav .active {
+	background-color: #fff;
+	border-bottom: 1px solid white;
+}
+
+#tabnav a {
+	display : block;
+	color : #666;
+	text-decoration : none;
+	padding : 10px 15px 10px 15px;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+}
+
+#tabnav a:hover {
+	background-color: #fff;
+}
+
+
+div.content.inactive {
+  display: none;
+}
+div.section.inactive {
+  display: none;
+}
+
+/* SETUP */
+* {
+  margin: 0; 
+  padding: 0; 
+  list-style-type: none;
+}
+
+a {
+  color: #2D7BB2; 
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+a:hover {
+  color: #333; 
+}
+
+/*
+h2, h3, h4 {
+  clear: both; 
+  margin: 0 0 0.6em 0;
+}
+*/
+
+h2 {
+  margin-bottom: 0.3em;
+}
+
+h3 {
+  color: #666;
+  margin-bottom: 0.5em;
+}
+
+.section {
+  float: left;
+  /*clear: left;*/
+  padding-left: 2.5%;
+  padding-bottom: 2.5%;
+  width: 30%;
+}
+
+.second {
+  float: right;
+  padding-right: 2.5%;
+  padding-bottom: 2.5%;
+  width: 55%;
+}
+
+.details li span {
+  font-size: 0.75em;
+}
+
+.details {
+  border-top: 1px solid #EEE;
+  width: 100%;
+}
+.details li {
+  display: block;
+  border-bottom: 1px solid #EEE;
+  height: 1.81em;
+  padding-top: 0.4em;
+  font-size: 0.9em;
+}
+
+
+/* CHART LISTS */
+.chartlist {
+  float: left; 
+  border-top: 1px solid #EEE; 
+  width: 100%;
+}
+.info {
+/*float: right;*/
+  border-top: 1px solid #EEE;
+  /*font-size: 1em;*/
+}
+.info li {
+  border-bottom: 1px solid #EEE;
+  font-size: 1em;
+  padding: 0.4em 4.5em 0.4em 0.5em;
+}
+
+.chartlist li {
+  position: relative;
+  display: block;  
+  border-bottom: 1px solid #EEE;
+  _zoom: 1;
+}
+.chartlist .index {
+  display: block; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  height: 100%; 
+  background: #B8E4F5; 
+  text-indent: -9999px; 
+  overflow: hidden; 
+  line-height: 2em;
+}
+.chartlist .compl {
+  display: block; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  height: 100%;
+  background: #91C8FF; /* #C0C0C0 */
+  text-indent: -9999px; 
+  overflow: hidden; 
+  line-height: 2em;
+}
+.chartlist li a {
+  display: block; 
+  padding: 0.4em 4.5em 0.4em 0.5em;
+  font-size: 1em;
+  position: relative; 
+  z-index: 2; 
+}
+.chartlist .c {
+  display: block; 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  margin: 0 0.3em; 
+  text-align: right; 
+  color: #999; 
+  font-weight: bold; 
+  font-size: 0.875em;
+  padding-top: 0.4em;
+  line-height: 2em;
+  z-index: 3;
+}
+.chartlist li:hover {
+  background: #EFEFEF; 
+}
+
+ul.words {
+  font-size: 0.9em;
+  width: 75%;
+  margin-left: 10%;
+  float: left;
+}
+
+ul.words li {
+  border-top: 1px solid #EEE;
+
+}
+
+
+/* trade-off for minimized HTML ... */
+
+.sand {font-size: 65%;}
+.s30 {font-size: 30%;}
+.s31 {font-size: 31%;}
+.s32 {font-size: 32%;}
+.s33 {font-size: 33%;}
+.s34 {font-size: 34%;}
+.s35 {font-size: 35%;}
+.s36 {font-size: 36%;}
+.s37 {font-size: 37%;}
+.s38 {font-size: 38%;}
+.s39 {font-size: 39%;}
+.s40 {font-size: 40%;}
+.s41 {font-size: 41%;}
+.s42 {font-size: 42%;}
+.s43 {font-size: 43%;}
+.s44 {font-size: 44%;}
+.s45 {font-size: 45%;}
+.s46 {font-size: 46%;}
+.s47 {font-size: 47%;}
+.s48 {font-size: 48%;}
+.s49 {font-size: 49%;}
+.s50 {font-size: 50%;}
+.s51 {font-size: 51%;}
+.s52 {font-size: 52%;}
+.s53 {font-size: 53%;}
+.s54 {font-size: 54%;}
+.s55 {font-size: 55%;}
+.s56 {font-size: 56%;}
+.s57 {font-size: 57%;}
+.s58 {font-size: 58%;}
+.s59 {font-size: 59%;}
+.s60 {font-size: 60%;}
+.s61 {font-size: 61%;}
+.s62 {font-size: 62%;}
+.s63 {font-size: 63%;}
+.s64 {font-size: 64%;}
+.s65 {font-size: 65%;}
+.s66 {font-size: 66%;}
+.s67 {font-size: 67%;}
+.s68 {font-size: 68%;}
+.s69 {font-size: 69%;}
+.s70 {font-size: 70%;}
+.s71 {font-size: 71%;}
+.s72 {font-size: 72%;}
+.s73 {font-size: 73%;}
+.s74 {font-size: 74%;}
+.s75 {font-size: 75%;}
+.s76 {font-size: 76%;}
+.s77 {font-size: 77%;}
+.s78 {font-size: 78%;}
+.s79 {font-size: 79%;}
+.s80 {font-size: 80%;}
+.s81 {font-size: 81%;}
+.s82 {font-size: 82%;}
+.s83 {font-size: 83%;}
+.s84 {font-size: 84%;}
+.s85 {font-size: 85%;}
+.s86 {font-size: 86%;}
+.s87 {font-size: 87%;}
+.s88 {font-size: 88%;}
+.s89 {font-size: 89%;}
+.s90 {font-size: 90%;}
+.s91 {font-size: 91%;}
+.s92 {font-size: 92%;}
+.s93 {font-size: 93%;}
+.s94 {font-size: 94%;}
+.s95 {font-size: 95%;}
+.s96 {font-size: 96%;}
+.s97 {font-size: 97%;}
+.s98 {font-size: 98%;}
+.s99 {font-size: 99%;}
+.s100 {font-size: 100%;}
+
+
+.chartlist .i0, .i1, .i2, .i3, .i4, .i5, .i6, .i7, .i8, .i9, .i10, .i11, .i12, .i13, .i14, .i15, .i16, .i17, .i18, .i19, .i20, .i21, .i22, .i23, .i24, .i25, .i26, .i27, .i28, .i29, .i30, .i31, .i32, .i33, .i34, .i35, .i36, .i37, .i38, .i39, .i40, .i41, .i42, .i43, .i44, .i45, .i46, .i47, .i48, .i49, .i50, .i51, .i52, .i53, .i54, .i55, .i56, .i57, .i58, .i59, .i60, .i61, .i62, .i63, .i64, .i65, .i66, .i67, .i68, .i69, .i70, .i71, .i72, .i73, .i74, .i75, .i76, .i77, .i78, .i79, .i80, .i81, .i82, .i83, .i84, .i85, .i86, .i87, .i88, .i89, .i90, .i91, .i92, .i93, .i94, .i95, .i96, .i97, .i98, .i99, .i100 {
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+background: #B8E4F5;
+text-indent: -9999px;
+overflow: hidden;
+line-height: 2em;
+}
+.i0 {width: 0%;}
+.i1 {width: 1%;}
+.i2 {width: 2%;}
+.i3 {width: 3%;}
+.i4 {width: 4%;}
+.i5 {width: 5%;}
+.i6 {width: 6%;}
+.i7 {width: 7%;}
+.i8 {width: 8%;}
+.i9 {width: 9%;}
+.i10 {width: 10%;}
+.i11 {width: 11%;}
+.i12 {width: 12%;}
+.i13 {width: 13%;}
+.i14 {width: 14%;}
+.i15 {width: 15%;}
+.i16 {width: 16%;}
+.i17 {width: 17%;}
+.i18 {width: 18%;}
+.i19 {width: 19%;}
+.i20 {width: 20%;}
+.i21 {width: 21%;}
+.i22 {width: 22%;}
+.i23 {width: 23%;}
+.i24 {width: 24%;}
+.i25 {width: 25%;}
+.i26 {width: 26%;}
+.i27 {width: 27%;}
+.i28 {width: 28%;}
+.i29 {width: 29%;}
+.i30 {width: 30%;}
+.i31 {width: 31%;}
+.i32 {width: 32%;}
+.i33 {width: 33%;}
+.i34 {width: 34%;}
+.i35 {width: 35%;}
+.i36 {width: 36%;}
+.i37 {width: 37%;}
+.i38 {width: 38%;}
+.i39 {width: 39%;}
+.i40 {width: 40%;}
+.i41 {width: 41%;}
+.i42 {width: 42%;}
+.i43 {width: 43%;}
+.i44 {width: 44%;}
+.i45 {width: 45%;}
+.i46 {width: 46%;}
+.i47 {width: 47%;}
+.i48 {width: 48%;}
+.i49 {width: 49%;}
+.i50 {width: 50%;}
+.i51 {width: 51%;}
+.i52 {width: 52%;}
+.i53 {width: 53%;}
+.i54 {width: 54%;}
+.i55 {width: 55%;}
+.i56 {width: 56%;}
+.i57 {width: 57%;}
+.i58 {width: 58%;}
+.i59 {width: 59%;}
+.i60 {width: 60%;}
+.i61 {width: 61%;}
+.i62 {width: 62%;}
+.i63 {width: 63%;}
+.i64 {width: 64%;}
+.i65 {width: 65%;}
+.i66 {width: 66%;}
+.i67 {width: 67%;}
+.i68 {width: 68%;}
+.i69 {width: 69%;}
+.i70 {width: 70%;}
+.i71 {width: 71%;}
+.i72 {width: 72%;}
+.i73 {width: 73%;}
+.i74 {width: 74%;}
+.i75 {width: 75%;}
+.i76 {width: 76%;}
+.i77 {width: 77%;}
+.i78 {width: 78%;}
+.i79 {width: 79%;}
+.i80 {width: 80%;}
+.i81 {width: 81%;}
+.i82 {width: 82%;}
+.i83 {width: 83%;}
+.i84 {width: 84%;}
+.i85 {width: 85%;}
+.i86 {width: 86%;}
+.i87 {width: 87%;}
+.i88 {width: 88%;}
+.i89 {width: 89%;}
+.i90 {width: 90%;}
+.i91 {width: 91%;}
+.i92 {width: 92%;}
+.i93 {width: 93%;}
+.i94 {width: 94%;}
+.i95 {width: 95%;}
+.i96 {width: 96%;}
+.i97 {width: 97%;}
+.i98 {width: 98%;}
+.i99 {width: 99%;}
+.i100 {width: 100%;}

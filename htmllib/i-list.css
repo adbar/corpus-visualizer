@@ -1,0 +1,119 @@
+/*
+	This script is part of the Corpus-Visualizer project (https://github.com/adbar/corpus-visualizer).
+	Copyright (C) Adrien Barbaresi, 2012.
+	The Corpus-Explorer is freely available under the GNU GPL v3 license (http://www.gnu.org/licenses/gpl.html).
+*/
+
+
+.chartlist .i0, .i1, .i2, .i3, .i4, .i5, .i6, .i7, .i8, .i9, .i10, .i11, .i12, .i13, .i14, .i15, .i16, .i17, .i18, .i19, .i20, .i21, .i22, .i23, .i24, .i25, .i26, .i27, .i28, .i29, .i30, .i31, .i32, .i33, .i34, .i35, .i36, .i37, .i38, .i39, .i40, .i41, .i42, .i43, .i44, .i45, .i46, .i47, .i48, .i49, .i50, .i51, .i52, .i53, .i54, .i55, .i56, .i57, .i58, .i59, .i60, .i61, .i62, .i63, .i64, .i65, .i66, .i67, .i68, .i69, .i70, .i71, .i72, .i73, .i74, .i75, .i76, .i77, .i78, .i79, .i80, .i81, .i82, .i83, .i84, .i85, .i86, .i87, .i88, .i89, .i90, .i91, .i92, .i93, .i94, .i95, .i96, .i97, .i98, .i99, .i100, {
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+background: #B8E4F5;
+text-indent: -9999px;
+overflow: hidden;
+line-height: 2em;
+}
+.i0 {width: 0%;}
+.i1 {width: 1%;}
+.i2 {width: 2%;}
+.i3 {width: 3%;}
+.i4 {width: 4%;}
+.i5 {width: 5%;}
+.i6 {width: 6%;}
+.i7 {width: 7%;}
+.i8 {width: 8%;}
+.i9 {width: 9%;}
+.i10 {width: 10%;}
+.i11 {width: 11%;}
+.i12 {width: 12%;}
+.i13 {width: 13%;}
+.i14 {width: 14%;}
+.i15 {width: 15%;}
+.i16 {width: 16%;}
+.i17 {width: 17%;}
+.i18 {width: 18%;}
+.i19 {width: 19%;}
+.i20 {width: 20%;}
+.i21 {width: 21%;}
+.i22 {width: 22%;}
+.i23 {width: 23%;}
+.i24 {width: 24%;}
+.i25 {width: 25%;}
+.i26 {width: 26%;}
+.i27 {width: 27%;}
+.i28 {width: 28%;}
+.i29 {width: 29%;}
+.i30 {width: 30%;}
+.i31 {width: 31%;}
+.i32 {width: 32%;}
+.i33 {width: 33%;}
+.i34 {width: 34%;}
+.i35 {width: 35%;}
+.i36 {width: 36%;}
+.i37 {width: 37%;}
+.i38 {width: 38%;}
+.i39 {width: 39%;}
+.i40 {width: 40%;}
+.i41 {width: 41%;}
+.i42 {width: 42%;}
+.i43 {width: 43%;}
+.i44 {width: 44%;}
+.i45 {width: 45%;}
+.i46 {width: 46%;}
+.i47 {width: 47%;}
+.i48 {width: 48%;}
+.i49 {width: 49%;}
+.i50 {width: 50%;}
+.i51 {width: 51%;}
+.i52 {width: 52%;}
+.i53 {width: 53%;}
+.i54 {width: 54%;}
+.i55 {width: 55%;}
+.i56 {width: 56%;}
+.i57 {width: 57%;}
+.i58 {width: 58%;}
+.i59 {width: 59%;}
+.i60 {width: 60%;}
+.i61 {width: 61%;}
+.i62 {width: 62%;}
+.i63 {width: 63%;}
+.i64 {width: 64%;}
+.i65 {width: 65%;}
+.i66 {width: 66%;}
+.i67 {width: 67%;}
+.i68 {width: 68%;}
+.i69 {width: 69%;}
+.i70 {width: 70%;}
+.i71 {width: 71%;}
+.i72 {width: 72%;}
+.i73 {width: 73%;}
+.i74 {width: 74%;}
+.i75 {width: 75%;}
+.i76 {width: 76%;}
+.i77 {width: 77%;}
+.i78 {width: 78%;}
+.i79 {width: 79%;}
+.i80 {width: 80%;}
+.i81 {width: 81%;}
+.i82 {width: 82%;}
+.i83 {width: 83%;}
+.i84 {width: 84%;}
+.i85 {width: 85%;}
+.i86 {width: 86%;}
+.i87 {width: 87%;}
+.i88 {width: 88%;}
+.i89 {width: 89%;}
+.i90 {width: 90%;}
+.i91 {width: 91%;}
+.i92 {width: 92%;}
+.i93 {width: 93%;}
+.i94 {width: 94%;}
+.i95 {width: 95%;}
+.i96 {width: 96%;}
+.i97 {width: 97%;}
+.i98 {width: 98%;}
+.i99 {width: 99%;}
+.i100 {width: 100%;}
