@@ -3,7 +3,7 @@
 
 ###	This script is part of the Corpus-Visualizer project (https://github.com/adbar/corpus-visualizer).
 ###	Copyright (C) Adrien Barbaresi, 2012.
-###	The Microblog-Explorer is freely available under the GNU GPL v3 license (http://www.gnu.org/licenses/gpl.html).
+###	The Corpus-Explorer is freely available under the GNU GPL v3 license (http://www.gnu.org/licenses/gpl.html).
 
 
 # TODO:
